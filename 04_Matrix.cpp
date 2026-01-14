@@ -106,9 +106,9 @@ void matrix::mul(matrix m2)
 }
 void matrix::transpose()
 {
-	for(int i=0;i<r;i++)
+	for(int i=0;i<c;i++)
 	{
-		for(int j=0;j<c;j++)
+		for(int j=0;j<r;j++)
 			cout<<m[j][i]<<"\t";
 		cout<<endl;
 	}
