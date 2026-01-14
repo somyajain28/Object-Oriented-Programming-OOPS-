@@ -88,8 +88,6 @@ int main()
 					s[count].get_data();
 					count++;
 				}
-				if(count > n)
-					cout<<"\n Maximum "<<n<<" student allowed"<<endl;
 				break;
 			case 2:
 				if(count == 0)
