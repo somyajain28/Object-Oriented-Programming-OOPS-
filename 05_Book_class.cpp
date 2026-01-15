@@ -1,12 +1,10 @@
 #include<iostream>
 #include<string>
-#include<iomanip>
-#include<conio.h>
 using namespace std;
 
 class book
 {
-	string name,author,id,nd;
+	string name,author,id;
 	char type;
 	public:
 		book()
@@ -36,13 +34,14 @@ class book
 			else
 			{
 				cout<<"Invalid input. Default to textbook"<<endl;
+				type = 't';
 				txtcount++;
-				id = txtcount;
+				id = "TXT"+strg(txtcount);;
 			}
 		}
 		void showdata()
 		{
-			cout<<"Book name: "<<name<<endl;
+			cout<<"\nBook name: "<<name<<endl;
 			cout<<"Author name: "<<author<<endl;
 			if(type =='T'||type == 't')
 			{
@@ -55,17 +54,19 @@ class book
 		}
 		string strg(int n)
 		{
-			string str ="";
-			int no = n;
-			int nd = 0;
-			while(n != 0)
+			int num = n,nd=0;
+			string str = "";
+			while(num>0)
 			{
-    			nd++;
-    			n = n / 10;
+				nd++;
+				num = num/10;
 			}
-			for(int i = 1;i<=3-nd;i++)
-				str += '0';
-			str += to_string(no);
+			while(nd<3)
+			{
+				str += "0";
+				nd++;
+			}
+			str += to_string(n);
 			return str;
 		}
 };
@@ -104,12 +105,7 @@ int main()
 				else
 				{
 					for(int i = 0; i<count;i++)
-					{
-						system("CLS");
 						b[i].showdata();
-						cout<<"Press any button to continue"<<endl;
-						getch();
-					}
 				}
 				break;
 			case 3:
