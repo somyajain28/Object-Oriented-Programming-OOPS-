@@ -40,7 +40,7 @@ Complex Complex :: operator -(Complex c){
 Complex Complex :: operator *(Complex c){
 	Complex c1;
 	c1.r = (r*c.r)-(i*c.i);
-	c1.i = (r*i)+(c.i*c.i);
+	c1.i = (r*c.i)+(i*c.r);
 	return c1;
 }
 Complex Complex :: operator /(Complex c){
